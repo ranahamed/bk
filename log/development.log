@@ -1,0 +1,2803 @@
+Started GET "/" for 127.0.0.1 at 2017-09-24 08:47:24 +0200
+  
+ActiveRecord::NoDatabaseError (Unknown database 'book_store_development'):
+  
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql2_adapter.rb:25:in `rescue in mysql2_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/mysql2_adapter.rb:12:in `mysql2_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.4) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.4) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.4) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (91.4ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (98.3ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK(7046587839488730750, 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateBooks (20170921233618)
+  [1m[35m (95.9ms)[0m  [1m[35mCREATE TABLE `books` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `publisher` varchar(255), `isbn` varchar(255), `publishing_date` date, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170921233618')[0m
+  [1m[35m (47.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAuthors (20170921235840)
+  [1m[35m (115.9ms)[0m  [1m[35mCREATE TABLE `authors` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `book_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_authors_on_book_id`  (`book_id`), CONSTRAINT `fk_rails_be0bf38327`
+FOREIGN KEY (`book_id`)
+  REFERENCES `books` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (160.8ms)[0m  [1m[35mCREATE  INDEX `index_authors_on_book_id_and_name`  ON `authors` (`book_id`, `name`) [0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170921235840')[0m
+  [1m[35m (48.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddIndexToBooksTitle (20170923210734)
+  [1m[35m (358.0ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_books_on_title`  ON `books` (`title`) [0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170923210734')[0m
+  [1m[35m (39.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-09-24 06:48:05', '2017-09-24 06:48:05')[0m
+  [1m[35m (42.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK(7046587839488730750)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-09-24 08:48:07 +0200
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 2902ms (Views: 2896.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 08:50:34 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered books/new.html.erb within layouts/application (54.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 133ms (Views: 74.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/books/" for 127.0.0.1 at 2017-09-24 08:52:16 +0200
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for BooksController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  `books`.* FROM `books` LIMIT 11[0m
+Started GET "/new" for 127.0.0.1 at 2017-09-24 08:53:09 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  Rendered books/new.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 39.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 08:53:17 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered books/new.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 08:53:41 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  Rendered books/new.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 09:17:17 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered books/new.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 61ms (Views: 38.6ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-24 09:17:21 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R9b1Sxp9Rffujhca9W0VB4lhbVAgPoEIv/4+BXdcBD1LK9epb8TsEDsOnX4uToD7e7RCFPjhUm4cy5CiiaCskA==", "book"=>{"title"=>"", "publisher"=>"", "isbn"=>"", "publishing_date"=>"", "authors_attributes"=>{"0"=>{"name"=>""}}}, "commit"=>"add author"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`title` = '' LIMIT 1[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`isbn` = '' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.0ms)
+  Rendered books/new.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 27.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-24 09:17:33 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5JsoBTvAG7u5FKPNBqes+cQIkz6iSaZ0LZ5q1/OHafnoZgrnTnmyXGyUKandhDkFNt28enqWdRKOq8RwDXvBVA==", "book"=>{"title"=>"", "publisher"=>"", "isbn"=>"", "publishing_date"=>"", "authors_attributes"=>{"0"=>{"name"=>""}}}, "commit"=>"add author"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`title` = '' LIMIT 1[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`isbn` = '' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  Rendered books/new.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 34ms (Views: 27.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-24 09:17:45 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YaTWlB2nHfoGIeuUcFtfGEHQh8BYOJLXgaROCPZykmJtWfR2aB60HdOhYfCreMrkswWohIDnQbEikeCvCI46zw==", "book"=>{"title"=>"gg", "publisher"=>"gg", "isbn"=>"gg", "publishing_date"=>"30-1-2003", "authors_attributes"=>{"0"=>{"name"=>"g"}}}, "commit"=>"add author"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`title` = 'gg' LIMIT 1[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`isbn` = 'gg' LIMIT 1[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO `books` (`title`, `publisher`, `isbn`, `publishing_date`, `created_at`, `updated_at`) VALUES ('gg', 'gg', 'gg', '2003-01-30', '2017-09-24 07:17:45', '2017-09-24 07:17:45')[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `authors` (`name`, `book_id`, `created_at`, `updated_at`) VALUES ('g', 1, '2017-09-24 07:17:45', '2017-09-24 07:17:45')[0m
+  [1m[35m (90.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books/1
+Completed 302 Found in 107ms (ActiveRecord: 93.8ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2017-09-24 09:17:45 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/show.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 101ms (Views: 28.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 09:26:59 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  Rendered books/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 70ms (Views: 66.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 09:31:25 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  Rendered books/new.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 37ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-24 09:32:05 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q5KOwz01RO6K3wavHvf2qFHeB9w1bKsZ2NLwrDLdaEVPb6whSIztCV9fjMvF1GNUowsomO2zeH97514LzCHA6A==", "book"=>{"title"=>"hhhhh", "publisher"=>"hhhhhh", "isbn"=>"hhhhhhh", "publishing_date"=>"20/3/2003", "authors_attributes"=>{"1506238291177"=>{"kind"=>"rana"}, "1506238292016"=>{"kind"=>"mirona"}}}, "commit"=>"create new book"}
+Unpermitted parameter: :kind
+Unpermitted parameter: :kind
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`title` = 'hhhhh' LIMIT 1[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`isbn` = 'hhhhhhh' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `publisher`, `isbn`, `publishing_date`, `created_at`, `updated_at`) VALUES ('hhhhh', 'hhhhhh', 'hhhhhhh', '2003-03-20', '2017-09-24 07:32:05', '2017-09-24 07:32:05')[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `authors` (`book_id`, `created_at`, `updated_at`) VALUES (2, '2017-09-24 07:32:05', '2017-09-24 07:32:05')[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `authors` (`book_id`, `created_at`, `updated_at`) VALUES (2, '2017-09-24 07:32:05', '2017-09-24 07:32:05')[0m
+  [1m[35m (245.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books/2
+Completed 302 Found in 258ms (ActiveRecord: 247.1ms)
+
+
+Started GET "/books/2" for 127.0.0.1 at 2017-09-24 09:32:05 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 2 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 2[0m
+  Rendered books/show.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 50ms (Views: 47.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-24 09:33:20 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 69ms (Views: 68.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-24 09:33:20 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 09:33:27 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered books/new.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 47ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-24 09:33:46 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O3wKaW7Yx+dKqYKlIJaqMPbFkbe+9227psI3ORegYco3gSiLG2FuAJ8pCMH7tT/MBBC+82Yovt0F95me6VzJZw==", "book"=>{"title"=>"kkk", "publisher"=>"kk", "isbn"=>"kkk", "publishing_date"=>"20/3/2003", "authors_attributes"=>{"1506238421632"=>{"kind"=>"lll"}, "1506238424281"=>{"kind"=>"ggg"}}}, "commit"=>"create new book"}
+Unpermitted parameter: :kind
+Unpermitted parameter: :kind
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`title` = 'kkk' LIMIT 1[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`isbn` = 'kkk' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `books` (`title`, `publisher`, `isbn`, `publishing_date`, `created_at`, `updated_at`) VALUES ('kkk', 'kk', 'kkk', '2003-03-20', '2017-09-24 07:33:46', '2017-09-24 07:33:46')[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `authors` (`book_id`, `created_at`, `updated_at`) VALUES (3, '2017-09-24 07:33:46', '2017-09-24 07:33:46')[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `authors` (`book_id`, `created_at`, `updated_at`) VALUES (3, '2017-09-24 07:33:46', '2017-09-24 07:33:46')[0m
+  [1m[35m (99.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books/3
+Completed 302 Found in 114ms (ActiveRecord: 101.4ms)
+
+
+Started GET "/books/3" for 127.0.0.1 at 2017-09-24 09:33:46 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 3 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 3[0m
+  Rendered books/show.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 31ms (Views: 28.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 09:37:55 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered books/new.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-24 09:38:08 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7tOFaRHlG4JBw0F8bkN5hfbdr6c6sITwigl7dNga0FHiLqeLZFyyZZRDyxi1YOx5BAiA4+JvV5YpPNXTJuZ4/A==", "book"=>{"title"=>"food", "publisher"=>"foof", "isbn"=>"fdsf", "publishing_date"=>"20/3/2003", "authors_attributes"=>{"1506238686075"=>{"kind"=>"fffff"}}}, "commit"=>"create new book"}
+Unpermitted parameter: :kind
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`title` = 'food' LIMIT 1[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`isbn` = 'fdsf' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `publisher`, `isbn`, `publishing_date`, `created_at`, `updated_at`) VALUES ('food', 'foof', 'fdsf', '2003-03-20', '2017-09-24 07:38:08', '2017-09-24 07:38:08')[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO `authors` (`book_id`, `created_at`, `updated_at`) VALUES (4, '2017-09-24 07:38:08', '2017-09-24 07:38:08')[0m
+  [1m[35m (89.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books/4
+Completed 302 Found in 99ms (ActiveRecord: 90.8ms)
+
+
+Started GET "/books/4" for 127.0.0.1 at 2017-09-24 09:38:08 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 4 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mAuthor Load (0.6ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 4[0m
+  Rendered books/show.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 09:39:27 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered books/new.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 09:42:16 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (10.1ms)
+  Rendered books/new.html.erb within layouts/application (12.8ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 57ms (Views: 39.2ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-24 09:42:40 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B7cjtyNCHbmgWwdT8C+g2qTootyl6eF8hW5himlRIoULSgFVVvu0XnXbjTcrDDUmVj2NmH02MhomW88tl62KKA==", "book"=>{"title"=>"game", "publisher"=>"gem", "isbn"=>"sfsf", "publishing_date"=>"20/3/2003", "authors_attributes"=>{"1506238947975"=>{"kind"=>"gem1"}, "1506238953407"=>{"kind"=>"gem2"}}}, "commit"=>"create new book"}
+Unpermitted parameter: :kind
+Unpermitted parameter: :kind
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`title` = 'game' LIMIT 1[0m
+  [1m[36mBook Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`isbn` = 'sfsf' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `publisher`, `isbn`, `publishing_date`, `created_at`, `updated_at`) VALUES ('game', 'gem', 'sfsf', '2003-03-20', '2017-09-24 07:42:40', '2017-09-24 07:42:40')[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `authors` (`book_id`, `created_at`, `updated_at`) VALUES (5, '2017-09-24 07:42:40', '2017-09-24 07:42:40')[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `authors` (`book_id`, `created_at`, `updated_at`) VALUES (5, '2017-09-24 07:42:40', '2017-09-24 07:42:40')[0m
+  [1m[35m (89.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books/5
+Completed 302 Found in 102ms (ActiveRecord: 91.8ms)
+
+
+Started GET "/books/5" for 127.0.0.1 at 2017-09-24 09:42:40 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 5 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 5[0m
+  Rendered books/show.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 39ms (Views: 36.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 09:45:21 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered books/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 09:48:29 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  Rendered books/new.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 39ms (Views: 35.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-24 09:48:51 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1QuERPEpChKIy08MYsjuVIb/dTDpyJkhzPBQaEFT0xPZ9qamhJCj9V1LxWi563uodCpadDEXSkdvxf7Pv697vg==", "book"=>{"title"=>"help", "publisher"=>"hani", "isbn"=>"hhhh", "publishing_date"=>"20/3/2003", "authors_attributes"=>{"1506239321796"=>{"kind"=>"g1"}, "1506239326678"=>{"kind"=>"g2"}}}, "commit"=>"create new book"}
+Unpermitted parameter: :kind
+Unpermitted parameter: :kind
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`title` = 'help' LIMIT 1[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`isbn` = 'hhhh' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `books` (`title`, `publisher`, `isbn`, `publishing_date`, `created_at`, `updated_at`) VALUES ('help', 'hani', 'hhhh', '2003-03-20', '2017-09-24 07:48:51', '2017-09-24 07:48:51')[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `authors` (`book_id`, `created_at`, `updated_at`) VALUES (6, '2017-09-24 07:48:51', '2017-09-24 07:48:51')[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `authors` (`book_id`, `created_at`, `updated_at`) VALUES (6, '2017-09-24 07:48:51', '2017-09-24 07:48:51')[0m
+  [1m[35m (60.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books/6
+Completed 302 Found in 71ms (ActiveRecord: 62.0ms)
+
+
+Started GET "/books/6" for 127.0.0.1 at 2017-09-24 09:48:51 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 6[0m
+  Rendered books/show.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 09:51:08 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered books/new.html.erb within layouts/application (17.2ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 65ms (Views: 62.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-24 09:51:32 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"evUabNpc0uHGMpZ6yM8UB/tAOGz/oI61Dy+4xLUhlpx2CDiOr+V7BhOyHB4T7IH7CZUXKCd/XdOsGhZjS90+MQ==", "book"=>{"title"=>"klkl", "publisher"=>"klkl", "isbn"=>"fhgd", "publishing_date"=>"20/3/2003", "authors_attributes"=>{"1506239484401"=>{"kind"=>"kl1"}, "1506239488221"=>{"kind"=>"kl2"}}}, "commit"=>"create new book"}
+Unpermitted parameter: :kind
+Unpermitted parameter: :kind
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`title` = 'klkl' LIMIT 1[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`isbn` = 'fhgd' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `publisher`, `isbn`, `publishing_date`, `created_at`, `updated_at`) VALUES ('klkl', 'klkl', 'fhgd', '2003-03-20', '2017-09-24 07:51:32', '2017-09-24 07:51:32')[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `authors` (`book_id`, `created_at`, `updated_at`) VALUES (7, '2017-09-24 07:51:32', '2017-09-24 07:51:32')[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `authors` (`book_id`, `created_at`, `updated_at`) VALUES (7, '2017-09-24 07:51:32', '2017-09-24 07:51:32')[0m
+  [1m[35m (58.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books/7
+Completed 302 Found in 66ms (ActiveRecord: 59.1ms)
+
+
+Started GET "/books/7" for 127.0.0.1 at 2017-09-24 09:51:32 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 7 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 7[0m
+  Rendered books/show.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 44ms (Views: 42.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 09:58:27 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered books/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 57ms (Views: 39.5ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-24 09:58:38 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WOsxuMknKfbm+dPRLtBwI/HCBpEFq+XNxd4I3MAk/BZUFhNavJ6AETN5WbX18+XfAxcp1d10Nqtm66Z7PthUuw==", "book"=>{"title"=>"ggggg", "publisher"=>"ggggg", "isbn"=>"ggggg", "publishing_date"=>"20/3/2003", "authors_attributes"=>{"1506239915704"=>{"kind"=>"hhhh"}}}, "commit"=>"create new book"}
+Unpermitted parameter: :kind
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`title` = 'ggggg' LIMIT 1[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`isbn` = 'ggggg' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `publisher`, `isbn`, `publishing_date`, `created_at`, `updated_at`) VALUES ('ggggg', 'ggggg', 'ggggg', '2003-03-20', '2017-09-24 07:58:38', '2017-09-24 07:58:38')[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `authors` (`book_id`, `created_at`, `updated_at`) VALUES (8, '2017-09-24 07:58:38', '2017-09-24 07:58:38')[0m
+  [1m[35m (73.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books/8
+Completed 302 Found in 90ms (ActiveRecord: 74.9ms)
+
+
+Started GET "/books/8" for 127.0.0.1 at 2017-09-24 09:58:38 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 8 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mAuthor Load (11.3ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 8[0m
+  Rendered books/show.html.erb within layouts/application (14.3ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 42ms (Views: 28.8ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 09:59:35 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered books/new.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 31ms (Views: 28.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 10:03:10 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  Rendered books/new.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (11.4ms)
+Completed 200 OK in 89ms (Views: 57.2ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-24 10:03:26 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pCdRMahSwarBsDt3g2Nwod3ujlj0srGT3LbPTF/IPRyo2nPT3etoTRQwsRNYQOVdLzuhHCxtYvV/g2HroTSVsQ==", "book"=>{"title"=>"hghg", "publisher"=>"hghgh", "isbn"=>"ghgh", "publishing_date"=>"20/3/2003", "authors_attribute"=>{"1506240202908"=>{"kind"=>"kkkk"}}}, "commit"=>"create new book"}
+Unpermitted parameter: :kind
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'authors_attribute' for Book.):
+  
+app/controllers/books_controller.rb:15:in `create'
+Started GET "/new" for 127.0.0.1 at 2017-09-24 10:03:41 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered books/new.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 57ms (Views: 40.8ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-24 10:03:50 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HCXtNXxPLYslAHSZLGY3PeA3GmWsQDeSw+mfI2nuT6sQ2M/XCfaEbPCA/v33RaLBEuI1IXSf5PRg3DGElxLnBg==", "book"=>{"title"=>"dsfdf", "publisher"=>"dsfdsf", "isbn"=>"dsfdsf", "publishing_date"=>"20/3/2003", "authors_attribute"=>{"1506240227011"=>{"kind"=>"sfsdf"}}}, "commit"=>"create new book"}
+Unpermitted parameter: :authors_attribute
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`title` = 'dsfdf' LIMIT 1[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`isbn` = 'dsfdsf' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `publisher`, `isbn`, `publishing_date`, `created_at`, `updated_at`) VALUES ('dsfdf', 'dsfdsf', 'dsfdsf', '2003-03-20', '2017-09-24 08:03:50', '2017-09-24 08:03:50')[0m
+  [1m[35m (53.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books/9
+Completed 302 Found in 61ms (ActiveRecord: 55.0ms)
+
+
+Started GET "/books/9" for 127.0.0.1 at 2017-09-24 10:03:50 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 9 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 9[0m
+  Rendered books/show.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 10:07:26 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered books/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 64ms (Views: 61.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-24 10:07:38 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uusGZRUTWTLlBf0z9ICTGQQ2yrlYsHmI/TbagPGJQWi2FiSHYKrw1TCFd1cvowbl9uPl/YBvqu5eA3QnD3XpxQ==", "book"=>{"title"=>"ooo", "publisher"=>"ooo", "isbn"=>"ooo", "publishing_date"=>"20/3/2003", "authors_attributes"=>{"1506240456407"=>{"kind"=>"oooo"}}}, "commit"=>"create new book"}
+Unpermitted parameter: :kind
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`title` = 'ooo' LIMIT 1[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`isbn` = 'ooo' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `publisher`, `isbn`, `publishing_date`, `created_at`, `updated_at`) VALUES ('ooo', 'ooo', 'ooo', '2003-03-20', '2017-09-24 08:07:38', '2017-09-24 08:07:38')[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `authors` (`book_id`, `created_at`, `updated_at`) VALUES (10, '2017-09-24 08:07:38', '2017-09-24 08:07:38')[0m
+  [1m[35m (87.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books/10
+Completed 302 Found in 96ms (ActiveRecord: 88.3ms)
+
+
+Started GET "/books/10" for 127.0.0.1 at 2017-09-24 10:07:38 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 10 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 10[0m
+  Rendered books/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 10:08:34 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered books/new.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 10:16:38 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered books/new.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 48ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-24 10:16:49 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W+iXlSGrJ76H8rt9oq1rFh+lT298r85ofCUF8SgEDbRXFbV3VBKOWVJyMRl5jv7q7XBgK6RwHQ7fEKtW1vilGQ==", "book"=>{"title"=>"jj", "publisher"=>"jj", "isbn"=>"jj11", "publishing_date"=>"20/3/2003", "authors_attributes"=>{"1506241006739"=>{"name"=>"ll"}}}, "commit"=>"create new book"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`title` = 'jj' LIMIT 1[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`isbn` = 'jj11' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `publisher`, `isbn`, `publishing_date`, `created_at`, `updated_at`) VALUES ('jj', 'jj', 'jj11', '2003-03-20', '2017-09-24 08:16:49', '2017-09-24 08:16:49')[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `authors` (`name`, `book_id`, `created_at`, `updated_at`) VALUES ('ll', 11, '2017-09-24 08:16:49', '2017-09-24 08:16:49')[0m
+  [1m[35m (87.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books/11
+Completed 302 Found in 103ms (ActiveRecord: 89.1ms)
+
+
+Started GET "/books/11" for 127.0.0.1 at 2017-09-24 10:16:49 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 11 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 11[0m
+  Rendered books/show.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 43ms (Views: 41.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 10:17:52 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered books/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 34ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-24 10:18:19 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kfb3D2dY3hWz2gNs54yBL+J/y7tpwKaJR+WKUMrKHs4lC9XtEuF38mZaiQg8rxTTEKrk/7Efde/k0CT3NDa2Yw==", "book"=>{"title"=>"happy", "publisher"=>"gamal", "isbn"=>"hj55", "publishing_date"=>"20/3/2003", "authors_attributes"=>{"1506241091885"=>{"name"=>"h1"}, "1506241096139"=>{"name"=>"h2"}}}, "commit"=>"create new book"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`title` = 'happy' LIMIT 1[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`isbn` = 'hj55' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `publisher`, `isbn`, `publishing_date`, `created_at`, `updated_at`) VALUES ('happy', 'gamal', 'hj55', '2003-03-20', '2017-09-24 08:18:19', '2017-09-24 08:18:19')[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `authors` (`name`, `book_id`, `created_at`, `updated_at`) VALUES ('h1', 12, '2017-09-24 08:18:19', '2017-09-24 08:18:19')[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `authors` (`name`, `book_id`, `created_at`, `updated_at`) VALUES ('h2', 12, '2017-09-24 08:18:19', '2017-09-24 08:18:19')[0m
+  [1m[35m (72.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books/12
+Completed 302 Found in 82ms (ActiveRecord: 73.7ms)
+
+
+Started GET "/books/12" for 127.0.0.1 at 2017-09-24 10:18:19 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 12 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 12[0m
+  Rendered books/show.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 49ms (Views: 47.6ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (165.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS `book_store_development`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS `book_store_test`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE DATABASE `book_store_development` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE DATABASE `book_store_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (82.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (82.3ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK(7046587839488730750, 0)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateBooks (20170921233618)
+  [1m[35m (81.0ms)[0m  [1m[35mCREATE TABLE `books` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `publisher` varchar(255), `isbn` varchar(255), `publishing_date` date, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170921233618')[0m
+  [1m[35m (39.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAuthors (20170921235840)
+  [1m[35m (90.4ms)[0m  [1m[35mCREATE TABLE `authors` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `book_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_authors_on_book_id`  (`book_id`), CONSTRAINT `fk_rails_be0bf38327`
+FOREIGN KEY (`book_id`)
+  REFERENCES `books` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (149.9ms)[0m  [1m[35mCREATE  INDEX `index_authors_on_book_id_and_name`  ON `authors` (`book_id`, `name`) [0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170921235840')[0m
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddIndexToBooksTitle (20170923210734)
+  [1m[35m (148.2ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_books_on_title`  ON `books` (`title`) [0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170923210734')[0m
+  [1m[35m (50.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-09-24 08:22:48', '2017-09-24 08:22:48')[0m
+  [1m[35m (37.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK(7046587839488730750)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/books/new" for 127.0.0.1 at 2017-09-24 10:23:15 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered books/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 46ms (Views: 29.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-24 10:23:59 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BLnOyleuezfEJbej9aK3H3iVeFcI94Z1eO8lrLPtlaAIROwoIhfS0BGlPccugSLjikBXE9AoVRPb2osLTRE9DQ==", "book"=>{"title"=>"birds", "publisher"=>"petter", "isbn"=>"gh52a", "publishing_date"=>"20/3/2003", "authors_attributes"=>{"1506241424909"=>{"name"=>"jack1"}, "1506241435465"=>{"name"=>"jack2"}}}, "commit"=>"create new book"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`title` = 'birds' LIMIT 1[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`isbn` = 'gh52a' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `publisher`, `isbn`, `publishing_date`, `created_at`, `updated_at`) VALUES ('birds', 'petter', 'gh52a', '2003-03-20', '2017-09-24 08:23:59', '2017-09-24 08:23:59')[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `authors` (`name`, `book_id`, `created_at`, `updated_at`) VALUES ('jack1', 1, '2017-09-24 08:23:59', '2017-09-24 08:23:59')[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `authors` (`name`, `book_id`, `created_at`, `updated_at`) VALUES ('jack2', 1, '2017-09-24 08:23:59', '2017-09-24 08:23:59')[0m
+  [1m[35m (86.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books/1
+Completed 302 Found in 100ms (ActiveRecord: 87.7ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2017-09-24 10:23:59 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/show.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 37ms (Views: 35.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-09-24 10:45:44 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  Rendered books/new.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 52ms (Views: 50.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-24 11:02:04 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 107ms (Views: 106.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-24 11:04:31 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 34ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-24 11:08:49 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_header.html.erb (4.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 31ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-24 11:10:44 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login_path" for 127.0.0.1 at 2017-09-24 11:10:46 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/login_path"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-09-24 11:11:31 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 53ms (Views: 51.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-24 11:11:33 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 44ms (Views: 42.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 11:28:20 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.0ms)
+  Rendered books/new.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 65ms (Views: 47.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-24 11:28:45 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e0vi9woXaGQLfiRjrwbhqAeN5/sBV3jhGyGqcUc7/Cx3tsAVf67Bg97+rgd0JXRU9VjIv9mIq4e4FATWucdUgQ==", "book"=>{"title"=>"animal", "publisher"=>"andi", "isbn"=>"455sad", "publishing_date"=>"1/2/2003", "authors_attributes"=>{"1506245320697"=>{"name"=>"karem"}}}, "commit"=>"create new book"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`title` = 'animal' LIMIT 1[0m
+  [1m[36mBook Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`isbn` = '455sad' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `books` (`title`, `publisher`, `isbn`, `publishing_date`, `created_at`, `updated_at`) VALUES ('animal', 'andi', '455sad', '2003-02-01', '2017-09-24 09:28:45', '2017-09-24 09:28:45')[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `authors` (`name`, `book_id`, `created_at`, `updated_at`) VALUES ('karem', 2, '2017-09-24 09:28:45', '2017-09-24 09:28:45')[0m
+  [1m[35m (64.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books/2
+Completed 302 Found in 79ms (ActiveRecord: 67.6ms)
+
+
+Started GET "/books/2" for 127.0.0.1 at 2017-09-24 11:28:45 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 2 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mAuthor Load (0.6ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 2[0m
+  Rendered books/show.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 45ms (Views: 34.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-24 11:28:53 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 29ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-24 11:39:53 +0200
+  
+SyntaxError (/home/ba/railsproj/book/app/controllers/sessions_controller.rb:7: syntax error, unexpected tSTRING_BEG, expecting keyword_then or ';' or '\n'
+:session][:password].casecmp "root"
+                              ^):
+  
+app/controllers/sessions_controller.rb:7: syntax error, unexpected tSTRING_BEG, expecting keyword_then or ';' or '\n'
+Started GET "/login" for 127.0.0.1 at 2017-09-24 11:40:13 +0200
+  
+SyntaxError (/home/ba/railsproj/book/app/controllers/sessions_controller.rb:7: syntax error, unexpected tSTRING_BEG, expecting keyword_then or ';' or '\n'
+:session][:password].casecmp "root"
+                              ^):
+  
+app/controllers/sessions_controller.rb:7: syntax error, unexpected tSTRING_BEG, expecting keyword_then or ';' or '\n'
+Started GET "/login" for 127.0.0.1 at 2017-09-24 11:40:57 +0200
+  
+SyntaxError (/home/ba/railsproj/book/app/controllers/sessions_controller.rb:16: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/sessions_controller.rb:16: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/login" for 127.0.0.1 at 2017-09-24 11:41:55 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-24 11:42:22 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+J8FMV8B+jiBzgMj1ist3hHsT4iuOPrhdSlRyH/EU5v0YifTKrhT31ROiUcNCLgi4zlgzHbnKYfWHP9vgTj7Ng==", "session"=>{"username"=>"root@yahoo.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 26ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-24 11:43:44 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 35ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-24 11:43:52 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C5uwg3t37uzhAv6AXOqArlgjhW1HdzHDGW3KfRJd1LQHZpJhDs5HCzSCdOSHyRVSqvaqKZ+o4qW6WGTa7KF8GQ==", "session"=>{"username"=>"root", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 14ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-24 11:43:59 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 39ms (Views: 38.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-24 11:44:07 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mNfenHNJSZWNyWRFs89rH6IqRf79UslelofORTcgPk2UKvx+BvDgclhJ7iFo7P7jUP9quiWNGjg1smDiydyW4A==", "session"=>{"username"=>"root", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-24 11:44:16 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U65O+aWx/0NH+Ohy4fO7Lg/I9HanzTaonjzlV+3PPdZfU2wb0AhWpJJ4YhY60C7S/R3bMn8S5c49CUvwEzOVew==", "session"=>{"username"=>"Root", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 37ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-24 11:45:43 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 45ms (Views: 40.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-24 11:46:07 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 36ms (Views: 35.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-24 11:46:15 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+EaTUyyYuluotrzX3Ddrnu9nFkRHMInAbHE8kQudB3IxrA8vm1ogQXTH2BixiIx1s9ThcZZHXuq48S+cWzofyA==", "session"=>{"username"=>"Root", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (4.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 70ms (Views: 69.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-24 12:21:37 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 59ms (Views: 58.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-24 12:21:41 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-24 12:21:44 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9xA8Okef3McoPEFHq66+shjjoOVtBGkerZmEvjvK6Jo++qBG8F1G3fRNJYjGEVlZRFBX0LxzvjR5GZeza23wIA==", "session"=>{"username"=>"ggg", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 51ms (Views: 50.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-24 12:21:54 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 29ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-24 12:22:02 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3RGOyB5u90TN0U8rT1q+9UYRCRJXx12OLfjyRfje9aHR7Kwqa9deoxhRxU+UeSsJtMQmVo8YjuiOzVziBiJdDA==", "session"=>{"username"=>"root", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-24 12:22:02 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 51ms (Views: 50.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-24 12:36:00 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_header.html.erb (304.8ms)
+Completed 500 Internal Server Error in 343ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `logged_in' for #<#<Class:0x007f5716b513e0>:0x007f5716b4eed8>
+Did you mean?  logged_in?
+               log_in):
+    16:         </li>
+    17: 				<li><%= link_to "Home", root_path %></li>
+    18: 
+    19: 				<%if logged_in%>
+    20: 					<li><%= link_to "log out", logout_path, method: :delete%></li>
+    21: 				<% else %>
+    22: 					<li><%= link_to "login",login_path %></li>
+  
+app/views/layouts/_header.html.erb:19:in `_app_views_layouts__header_html_erb__4533005706951192837_70006011310260'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___3867547155655729860_70006009912300'
+Started GET "/" for 127.0.0.1 at 2017-09-24 12:36:23 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-09-24 12:36:26 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4sF50uAuIqiqFjmUFWYcAwoZHq661iAnzNnKbKd1HmnuPFswlZeLT3+Ws/DORYn/+Mwx6mIJ80Fv7GTLWYm2xA=="}
+No template found for SessionsController#destroy, rendering head :no_content
+Completed 204 No Content in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-24 12:36:30 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 49ms (Views: 46.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-24 12:36:43 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 17ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-24 12:37:14 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 34ms (Views: 33.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-24 12:37:16 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 25ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-24 12:37:26 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/8bCBcc3G9+26wqicfXYBeK/1M9sRQcJQRvBR+X9JCKU/N1N+CU84Xq8dw40wB4hZaVVGRoSyM8r8dp43zEtsw==", "session"=>{"username"=>"root", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (5.4ms)
+Completed 200 OK in 43ms (Views: 42.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-24 12:37:34 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yjgpDTfwPe08VGH9B5J5BO269hr4E4kowLY6E7NXEPHkR7xBZaA2pXAy5rWe07zFO7qzekCmiiz3m068FikBUw==", "session"=>{"username"=>"root", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-24 12:37:34 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 29ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/home" for 127.0.0.1 at 2017-09-24 12:50:48 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"home"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 7ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=home):
+  
+app/controllers/books_controller.rb:6:in `show'
+Started GET "/book/home" for 127.0.0.1 at 2017-09-24 12:51:04 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/book/home"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/books/home" for 127.0.0.1 at 2017-09-24 12:51:58 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"home"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=home):
+  
+app/controllers/books_controller.rb:6:in `show'
+Started GET "/" for 127.0.0.1 at 2017-09-24 12:52:26 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 36ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/home" for 127.0.0.1 at 2017-09-24 12:52:33 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"home"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=home):
+  
+app/controllers/books_controller.rb:6:in `show'
+Started GET "/books" for 127.0.0.1 at 2017-09-24 12:52:48 +0200
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for BooksController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-09-24 12:52:57 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 23ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/home" for 127.0.0.1 at 2017-09-24 12:54:48 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"home"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=home):
+  
+app/controllers/books_controller.rb:6:in `show'
+Started GET "/books/home" for 127.0.0.1 at 2017-09-24 13:35:36 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"home"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 5ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=home):
+  
+app/controllers/books_controller.rb:6:in `show'
+Started GET "/home" for 127.0.0.1 at 2017-09-24 13:35:53 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2017-09-24 13:36:12 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/home"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/home" for 127.0.0.1 at 2017-09-24 14:14:04 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-09-24 14:14:19 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered books/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 44ms (Views: 25.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/books/home" for 127.0.0.1 at 2017-09-24 14:14:26 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"home"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=home):
+  
+app/controllers/books_controller.rb:6:in `show'
+Started GET "/" for 127.0.0.1 at 2017-09-24 14:24:55 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 52ms (Views: 51.4ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-09-24 14:24:57 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dI51EMKNVqf5W8Xr0WQeIzkGbFl3gW0WImx/JpqavHta8eBckN1d77U9QqNIJdvi7wYpOc80bhIVQQuJP+St2Q=="}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/helpers/sessions_helper.rb:11:in `log_out'
+app/controllers/sessions_controller.rb:17:in `destroy'
+Started DELETE "/logout" for 127.0.0.1 at 2017-09-24 14:26:25 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dI51EMKNVqf5W8Xr0WQeIzkGbFl3gW0WImx/JpqavHta8eBckN1d77U9QqNIJdvi7wYpOc80bhIVQQuJP+St2Q=="}
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `call' for #<ActionDispatch::Request::Session:0x007f5716e263e0>):
+  
+app/helpers/sessions_helper.rb:13:in `log_out'
+app/controllers/sessions_controller.rb:17:in `destroy'
+Started DELETE "/logout" for 127.0.0.1 at 2017-09-24 14:26:55 +0200
+  
+SyntaxError (/home/ba/railsproj/book/app/helpers/sessions_helper.rb:13: syntax error, unexpected '=', expecting keyword_end
+		session(:login)= false
+		                ^):
+  
+app/helpers/sessions_helper.rb:13: syntax error, unexpected '=', expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/sessions_controller.rb:1:in `<top (required)>'
+Started DELETE "/logout" for 127.0.0.1 at 2017-09-24 14:27:18 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dI51EMKNVqf5W8Xr0WQeIzkGbFl3gW0WImx/JpqavHta8eBckN1d77U9QqNIJdvi7wYpOc80bhIVQQuJP+St2Q=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-24 14:27:19 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (4.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 31ms (Views: 29.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-24 14:27:21 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (8.0ms)
+Completed 200 OK in 62ms (Views: 61.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-24 14:27:30 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DSavbQm19WcxdcZTyuPFK6G/iNhaKEmGWAhI2Tx7zfVmHLAlNqfSWf0iu/+P1gMPJqUJDix/hkAy4lPmBrfEZA==", "session"=>{"username"=>"root", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-24 14:27:30 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-09-24 14:27:32 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"hHsVH6aYwJUTahD4qf2Yugr2Whb7g0cu+awsBW4eCbGqBIBT9MjL3V8Ml7AwvF173PYfdkM2RCrOgViqy2AYEw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-24 14:27:32 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 29ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-24 14:28:02 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 51ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-24 14:28:11 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aMkjbRe1Ua4l3KlD46Wqj1AlW71mOedKBMumUgj/xKED8zwlKKd2kOmL1O+mkGyr1z/aaxBuKIxuIb1tMjPNMA==", "session"=>{"username"=>"root", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-24 14:28:11 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 41ms (Views: 40.3ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-09-24 14:28:12 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"upIi4G//uHvdSoLEbrg99uBhkMlvP+8e5RtZ7DDTJKmU7besPa+zM5EsBYz3+fg3NmHVqdeK7BrSNi1Dla01Cw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-24 14:28:12 +0200
+Processing by BooksController#home as HTML
+  Rendering books/home.html.erb within layouts/application
+  Rendered books/home.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/edit/11" for 127.0.0.1 at 2017-09-24 15:28:19 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/edit/11"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/books/11/edit" for 127.0.0.1 at 2017-09-24 15:28:39 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 11 LIMIT 1[0m
+Completed 404 Not Found in 6ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=11):
+  
+app/controllers/books_controller.rb:26:in `edit'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:29:00 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 27ms (Views: 19.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-09-24 15:30:00 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered books/new.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 32ms (Views: 24.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/1edit" for 127.0.0.1 at 2017-09-24 15:30:06 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/1edit"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/1/edit" for 127.0.0.1 at 2017-09-24 15:30:11 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/1/edit"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:30:22 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (8.9ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 34ms (Views: 24.0ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/books/edit" for 127.0.0.1 at 2017-09-24 15:30:33 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=edit):
+  
+app/controllers/books_controller.rb:6:in `show'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:31:54 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  Rendered books/edit.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:35:09 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 36ms (Views: 33.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:38:15 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 33ms (Views: 26.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-09-24 15:39:33 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered books/new.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:39:42 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-09-24 15:40:16 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered books/new.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_header.html.erb (9.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 40ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-09-24 15:40:31 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered books/new.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/" for 127.0.0.1 at 2017-09-24 15:44:15 +0200
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for BooksController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:44:27 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (11.3ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Book:0x007f57156341b0>):
+    21:         <%=f.label :authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 		<%=f.date_field :name , class: 'form-control'%>
+    25: 
+    26: 		<% end %>
+    27: 
+  
+app/views/books/edit.html.erb:24:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70005998838880'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70005998838880'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70005998838880'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:44:42 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `jack1' for #<Book:0x007f57172a3bc0>):
+    21:         <%=f.label :authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 		<%=f.date_field p.name , class: 'form-control'%>
+    25: 
+    26: 		<% end %>
+    27: 
+  
+app/views/books/edit.html.erb:24:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006013760320'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006013760320'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006013760320'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:45:04 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (private method `p' called for #<Book:0x007f5716eb1bc0>):
+    21:         <%=f.label :authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 		<%=f.date_field :p , class: 'form-control'%>
+    25: 
+    26: 		<% end %>
+    27: 
+  
+app/views/books/edit.html.erb:24:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006011692220'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006011692220'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006011692220'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:45:42 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.1ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for :p:Symbol):
+    21:         <%=f.label :authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 		<%=f.date_field :p.name , class: 'form-control'%>
+    25: 
+    26: 		<% end %>
+    27: 
+  
+app/views/books/edit.html.erb:24:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006000217660'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006000217660'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006000217660'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:45:59 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (241.4ms)
+Completed 500 Internal Server Error in 244ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `authors' for #<#<Class:0x007f57160c57a0>:0x007f57173a8610>
+Did you mean?  @authors):
+    21:         <%=f.label :authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 		<%=f.date_field authors.name , class: 'form-control'%>
+    25: 
+    26: 		<% end %>
+    27: 
+  
+app/views/books/edit.html.erb:24:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006014298100'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006014298100'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006014298100'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:46:08 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (218.9ms)
+Completed 500 Internal Server Error in 221ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `author' for #<#<Class:0x007f57160c57a0>:0x007f5716299540>
+Did you mean?  @authors):
+    21:         <%=f.label :authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 		<%=f.date_field author.name , class: 'form-control'%>
+    25: 
+    26: 		<% end %>
+    27: 
+  
+app/views/books/edit.html.erb:24:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006005354420'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006005354420'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006005354420'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:46:16 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for :author:Symbol):
+    21:         <%=f.label :authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 		<%=f.date_field :author.name , class: 'form-control'%>
+    25: 
+    26: 		<% end %>
+    27: 
+  
+app/views/books/edit.html.erb:24:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70005996716040'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70005996716040'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70005996716040'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:47:10 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  [1m[36mAuthor Load (0.6ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `jack1' for #<Book:0x007f57171403f0>):
+    21:         <%=f.label :authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 		<%=f.date_field p.name, class: 'form-control'%>
+    25: 
+    26: 		<% end %>
+    27: 
+  
+app/views/books/edit.html.erb:24:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006013056140'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006013056140'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006013056140'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:47:41 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for :p:Symbol):
+    21:         <%=f.label :authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 		<%=f.date_field :p.name, class: 'form-control'%>
+    25: 
+    26: 		<% end %>
+    27: 
+  
+app/views/books/edit.html.erb:24:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006004745260'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006004745260'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006004745260'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:47:53 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Book:0x007f5715ac1f70>):
+    21:         <%=f.label :authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 		<%=f.date_field :name, class: 'form-control'%>
+    25: 
+    26: 		<% end %>
+    27: 
+  
+app/views/books/edit.html.erb:24:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006014760720'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006014760720'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006014760720'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:48:24 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 48ms (Views: 46.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:49:14 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (16.3ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `#<Author:0x007f5717068180>' for #<Book:0x007f5717093ce0>):
+    21:         <%=f.label :Authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 		<%=f.date_field p, class: 'form-control'%>
+    25: 
+    26: 		<% end %>
+    27: 
+  
+app/views/books/edit.html.erb:24:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006012679180'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006012679180'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006012679180'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:49:35 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (10.8ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `jack1' for #<Book:0x007f5716018398>):
+    21:         <%=f.label :Authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 		<%=f.date_field p[:name], class: 'form-control'%>
+    25: 
+    26: 		<% end %>
+    27: 
+  
+app/views/books/edit.html.erb:24:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006004020760'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006004020760'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006004020760'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:50:04 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 36ms (Views: 34.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:51:10 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (12.6ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `jack1' for #<Book:0x007f5716a6b688>):
+    21:         <%=f.label :Authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 		<%=f.date_field p.name, class: 'form-control'%>
+    25: 
+    26: 		<% end %>
+    27: 
+  
+app/views/books/edit.html.erb:24:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006009448600'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006009448600'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006009448600'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:51:47 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (private method `p' called for #<Book:0x007f5716f52520>):
+    21:         <%=f.label :Authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 		<%=f.date_field :p, class: 'form-control'%>
+    25: 
+    26: 		<% end %>
+    27: 
+  
+app/views/books/edit.html.erb:24:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006012021100'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006012021100'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006012021100'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:51:53 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (9.8ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (private method `p' called for #<Book:0x007f5715c2e048>):
+    21:         <%=f.label :Authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 		<%=f.date_field :p, class: 'form-control'%>
+    25: 
+    26: 		<% end %>
+    27: 
+  
+app/views/books/edit.html.erb:24:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006001985220'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006001985220'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006001985220'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:52:44 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for :p:Symbol):
+    21:         <%=f.label :Authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 		<%=f.date_field :p.name, class: 'form-control'%>
+    25: 
+    26: 		<% end %>
+    27: 
+  
+app/views/books/edit.html.erb:24:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006014509220'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006014509220'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006014509220'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:53:39 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (private method `p' called for #<Book:0x007f5717008898>):
+    21:         <%=f.label :Authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 		<%=f.text_field :p, class: 'form-control'%>
+    25: 
+    26: 		<% end %>
+    27: 
+  
+app/views/books/edit.html.erb:24:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006012394180'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006012394180'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006012394180'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:53:53 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (10.3ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `jack1' for #<Book:0x007f5715d9b728>):
+    21:         <%=f.label :Authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 		<%=f.text_field p.name, class: 'form-control'%>
+    25: 
+    26: 		<% end %>
+    27: 
+  
+app/views/books/edit.html.erb:24:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006002733440'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006002733440'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006002733440'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:55:15 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (9.8ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `p.name' for #<Book:0x007f57174459b0>):
+    21:         <%=f.label :Authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 		<%=f.text_field "p.name", class: 'form-control'%>
+    25: 
+    26: 		<% end %>
+    27: 
+  
+app/views/books/edit.html.erb:24:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006014616320'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006014616320'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006014616320'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:57:26 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (10.6ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `jack1' for #<Book:0x007f5716ddd528>):
+    21:         <%=f.label :Authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 		<%=f.text_field p.name %>
+    25: 
+    26: 		<% end %>
+    27: 
+  
+app/views/books/edit.html.erb:24:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006011256320'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006011256320'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006011256320'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 15:59:49 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 47ms (Views: 45.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 16:03:22 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (28.4ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `a' for #<Book:0x007f5714cc2028>):
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 			<% a= p.name%>
+    25: 			<%=f.text_field :a, class: 'form-control'%>
+    26: 
+    27: 		<% end %>
+    28: 
+  
+app/views/books/edit.html.erb:25:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70005993888200'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70005993888200'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70005993888200'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 16:03:42 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `jack1' for #<Book:0x007f5717176c20>):
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 			<% a= p.name%>
+    25: 			<%=f.text_field a, class: 'form-control'%>
+    26: 
+    27: 		<% end %>
+    28: 
+  
+app/views/books/edit.html.erb:25:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006013143680'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006013143680'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006013143680'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 16:05:01 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.1ms)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `a' for #<Book:0x007f57163b72b0>):
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 			$a = p.name
+    25: 			<%=f.text_field :a, class: 'form-control'%>
+    26: 
+    27: 		<% end %>
+    28: 
+  
+app/views/books/edit.html.erb:25:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006005936100'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006005936100'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006005936100'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 16:05:12 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (235.0ms)
+Completed 500 Internal Server Error in 238ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `a' for #<#<Class:0x007f57160c57a0>:0x0055e9af1321a0>):
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 			$a = p.name
+    25: 			<%=f.text_field a, class: 'form-control'%>
+    26: 
+    27: 		<% end %>
+    28: 
+  
+app/views/books/edit.html.erb:25:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_47231076631140'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_47231076631140'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_47231076631140'
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-09-24 16:06:51 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 1[0m
+  Rendered books/edit.html.erb within layouts/application (6.3ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `a' for #<Book:0x007f57170f28d0>):
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 			a <%= p.name%>
+    25: 			<%=f.text_field :a, class: 'form-control'%>
+    26: 
+    27: 		<% end %>
+    28: 
+  
+app/views/books/edit.html.erb:25:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006012873180'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006012873180'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006012873180'
+Started GET "/show/1" for 127.0.0.1 at 2017-09-24 16:07:56 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/show/1"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/books/1/show" for 127.0.0.1 at 2017-09-24 16:08:29 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/books/1/show"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/new" for 127.0.0.1 at 2017-09-24 16:08:42 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered books/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-24 16:08:59 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TtYcB0ICF3GyqzxL86sxw/72XTlUth6oo/tz8l3TS6JgqYlLEFIcOf7NuwNq6vQCKPYYWewDHayU1gdd+K1aAA==", "book"=>{"title"=>"uujuu", "publisher"=>"jhgjgkj", "isbn"=>"kjhgkjhk", "publishing_date"=>"20/3/2003", "authors_attributes"=>{"1506262131505"=>{"name"=>"uhui"}, "1506262134769"=>{"name"=>"jhgkg"}}}, "commit"=>"create new book"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`title` = 'uujuu' LIMIT 1[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `books` WHERE `books`.`isbn` = 'kjhgkjhk' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `publisher`, `isbn`, `publishing_date`, `created_at`, `updated_at`) VALUES ('uujuu', 'jhgjgkj', 'kjhgkjhk', '2003-03-20', '2017-09-24 14:08:59', '2017-09-24 14:08:59')[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `authors` (`name`, `book_id`, `created_at`, `updated_at`) VALUES ('uhui', 3, '2017-09-24 14:08:59', '2017-09-24 14:08:59')[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO `authors` (`name`, `book_id`, `created_at`, `updated_at`) VALUES ('jhgkg', 3, '2017-09-24 14:08:59', '2017-09-24 14:08:59')[0m
+  [1m[35m (104.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books/3
+Completed 302 Found in 114ms (ActiveRecord: 105.2ms)
+
+
+Started GET "/books/3" for 127.0.0.1 at 2017-09-24 16:08:59 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 3 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mAuthor Load (0.6ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 3[0m
+  Rendered books/show.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 52ms (Views: 48.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books/3" for 127.0.0.1 at 2017-09-24 16:09:10 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 3 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 3[0m
+  Rendered books/show.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/3/edit" for 127.0.0.1 at 2017-09-24 16:09:49 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 3 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 3[0m
+  Rendered books/edit.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `uhui' for #<Book:0x007f57173f6748>):
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 			
+    25: 			<%=f.text_field p.name, class: 'form-control'%>
+    26: 
+    27: 		<% end %>
+    28: 
+  
+app/views/books/edit.html.erb:25:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006014453760'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006014453760'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006014453760'
+Started GET "/books/3/edit" for 127.0.0.1 at 2017-09-24 16:10:52 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 3 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 3[0m
+  Rendered books/edit.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `uhui' for #<Book:0x007f5716d5f600>):
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 			
+    25: 			<%=f.text_field "#{p.name}", class: 'form-control'%>
+    26: 
+    27: 		<% end %>
+    28: 
+  
+app/views/books/edit.html.erb:25:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006010999240'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006010999240'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006010999240'
+Started GET "/books/3/edit" for 127.0.0.1 at 2017-09-24 16:12:00 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 3 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 3[0m
+  Rendered books/edit.html.erb within layouts/application (11.6ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Book:0x007f57159aa1f0>):
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 			
+    25: 			<%=f.text_field :name, class: 'form-control'%>
+    26: 
+    27: 		<% end %>
+    28: 
+  
+app/views/books/edit.html.erb:25:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006000666420'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006000666420'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006000666420'
+Started GET "/books/3/edit" for 127.0.0.1 at 2017-09-24 16:13:49 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 3 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.1ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 3[0m
+  Rendered books/edit.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Book:0x007f571726c6c0>):
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 			<%name=p.name%>
+    25: 			<%=f.text_field :name, class: 'form-control'%>
+    26: 
+    27: 		<% end %>
+    28: 
+  
+app/views/books/edit.html.erb:25:in `block (2 levels) in _app_views_books_edit_html_erb__2469163327001711836_70006013647280'
+app/views/books/edit.html.erb:23:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006013647280'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006013647280'
+Started GET "/books/3/edit" for 127.0.0.1 at 2017-09-24 16:14:59 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 3 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered books/edit.html.erb within layouts/application (35.0ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 11.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `attr_accessible' for #<Class:0x007f5716454d30>
+Did you mean?  attr_accessor):
+    19:   		<%=f.date_field :publishing_date , class: 'form-control'%>
+    20: 
+    21:         <%=f.label :Authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 			<%=f.text_field :name, class: 'form-control'%>
+    25: 
+  
+app/models/author.rb:3:in `<class:Author>'
+app/models/author.rb:1:in `<top (required)>'
+app/views/books/edit.html.erb:22:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006006796480'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006006796480'
+Started GET "/books/3/edit" for 127.0.0.1 at 2017-09-24 16:16:16 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 3 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered books/edit.html.erb within layouts/application (30.0ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `attr_accessible' for #<Class:0x007f57172c8358>
+Did you mean?  attr_accessor):
+    19:   		<%=f.date_field :publishing_date , class: 'form-control'%>
+    20: 
+    21:         <%=f.label :Authors%>
+    22:   		<%@authors=@book.authors.all%>
+    23: 		<%@authors.each do |p|%>
+    24: 			<%=f.text_field :name, class: 'form-control'%>
+    25: 
+  
+app/models/author.rb:3:in `<class:Author>'
+app/models/author.rb:1:in `<top (required)>'
+app/views/books/edit.html.erb:22:in `block in _app_views_books_edit_html_erb__2469163327001711836_70006014039900'
+app/views/books/edit.html.erb:5:in `_app_views_books_edit_html_erb__2469163327001711836_70006014039900'
+Started GET "/books/3/edit" for 127.0.0.1 at 2017-09-24 16:22:47 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 3 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered books/edit.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 34ms (Views: 24.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/books/3/edit" for 127.0.0.1 at 2017-09-24 16:23:18 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 3 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  Rendered books/edit.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books/3/edit" for 127.0.0.1 at 2017-09-24 16:25:27 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 3 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors` WHERE `authors`.`book_id` = 3[0m
+  Rendered books/edit.html.erb within layouts/application (15.6ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 38.8ms | ActiveRecord: 1.3ms)
+
+
